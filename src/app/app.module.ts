@@ -9,7 +9,9 @@ import { CountriesComponent } from './components/countries/countries.component';
 import { DataServiceComponent } from './service/data-service/data-service.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
-import { GoogleChartsModule } from 'angular-google-charts'
+import { GoogleChartsModule } from 'angular-google-charts';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { GoogleChartsModule } from 'angular-google-charts'
     AppRoutingModule,
     HttpClientModule,
     GoogleChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
